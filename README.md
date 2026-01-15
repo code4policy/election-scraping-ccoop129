@@ -21,11 +21,18 @@ Let's use an LLM to create a scraper for the Massachusetts state electios websit
         ```
 
 ### Task instructions
-1. Visit the website: https://electionstats.state.ma.us/elections/search/year_from:2024/year_to:2025
-2. Inspect the page to identify the table where election data is stored:
-    1. Right-click anywhere on the page > Click "Inspect" > find the table with election data
-4. Check `robots.txt`: Visit https://electionstats.state.ma.us/robots.txt
-5. Modify the IMDB scraper example to scrape the elections website. It should collect election data and save to elections.json. Feel free to vibe code this. 
-6. Adjust your scraper to only grab 2025 elections. Hint: try manually adjusting the the year filters on the elections website. Does the URL change? 
-7. Extract additional data fields!
+1. Visit the website: https://electionstats.state.ma.us/elections/search/year_from:2025/year_to:2025
+2. Check `robots.txt` file (visit https://electionstats.state.ma.us/robots.txt). What preferences does this site express about whether they want to be scraped or not?
+3. Inspect the page to identify the table where election data is stored:
+    a. Right-click anywhere on the page > Click "Inspect" > find the table with election data
+4. Read the IMDB scraper example to scrape the elections website and discuss what each line does with your teammate.
+5. Make a new scraper in `election-scraper.py` that scrapes information from the MA state gov website. Complete the following tasks by copy/paste and modifying lines from the IMDB scraper code one-by-one.
 
+    a. Task 1: grab each row of the table (What is the CSS Selector for this?)
+    b. Task 2: extract the year and print it out
+    b. Task 3: extract the name of the candidate and print it out
+    c. Task 4: extract the name of the party and print it out
+
+5. Ask the LLM to help you write the code to save the data to a CSV file.
+6. Adjust your scraper to only grab 2024 elections. Hint: try manually adjusting the the year filters on the elections website. Does the URL change? 
+7. Bonus: Extract additional data fields!
